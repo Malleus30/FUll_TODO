@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="forma">
+       <div class="highPrior">
+        <p class="high">HIGH</p>
+
+
+        <form  onsubmit="return false;">
+
+            <div class="addCross">
+            <span class="line_rotate90"></span>
+            <span class="line_rotate90"></span>
+            <input type="submit" class="buttonPlus high_list" value="">
+            </div>
+        <input type="text" class="inp" id='highInpId' placeholder="Добавить важных дел" >
+
+        </form>
+
+
+        <div class="field">
+
+            <input type="checkbox" class="radioButton">   
+            <p class="txt">Вот вам и супер интересная тема. 
+            Вы наверняка заметили что ваши файлы с кодом становятся все объемнее, что хочется вынести некоторые вещи куда-то за пределы основной программы.</p>
+
+            <div class="close">
+                <span class="line_rotate45"></span>
+                <span class="line_rotate45"></span>
+            </div>
+
+            <input type="button" class="btn_close">
+        </div>
+
+
+        <div class="field">
+
+            <input type="checkbox" class="radioButton"> 
+            <p class="txt">Сверстать этот TODO list</p>
+
+            <div class="close">
+                <span class="line_rotate45"></span>
+                <span class="line_rotate45"></span>
+            </div>
+
+            <input type="button" class="btn_close">
+        </div>
+
+
+        <div class="field">
+
+            <input type="checkbox" class="radioButton"> 
+            <p class="txt">Начать делать задачу</p>
+
+            <div class="close">
+                <span class="line_rotate45"></span>
+                <span class="line_rotate45"></span>
+            </div>
+
+            <input type="button" class="btn_close">
+        </div>
+
+      </div>
+
+
+      <div class="lowPrior">
+        <p class="low">LOW</p>
+
+
+        <form  onsubmit="return false;">
+            <div class="addCross">
+            <span class="line_rotate90"></span>
+            <span class="line_rotate90"></span>
+            <input type="submit" class="buttonPlus low_list" value="">
+            </div>
+        <input type="text" class="inp" id='lowInpId' placeholder="Добавить">
+        </form>
+
+
+        <div class="field">
+
+            <input type="checkbox" class="radioButton"> 
+            <p class="txt">Посмотреть ютубчик</p>
+            <div class="close">
+                <span class="line_rotate45"></span>
+                <span class="line_rotate45"></span>
+            </div>
+            <input type="button" class="btn_close">
+
+        </div>
+       </div>
+
+
+    </div>
+
+    <script type="module" src='main.js'></script>
+
+</body>
+</html>
