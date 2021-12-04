@@ -1,4 +1,4 @@
-export default function click(){
+export default function addDeleteEvent(){
     
     let btns = document.querySelectorAll('.btn_close');
     

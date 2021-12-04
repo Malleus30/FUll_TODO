@@ -1,20 +1,144 @@
 
 
 
+import addDeleteEvent from './remove/remove.js';
 
 
+addDeleteEvent();
 
-import addElementHighList from './highPriorityAdd/highPrior.js';
 document.querySelector('.high_list').addEventListener('click', addElementHighList);
 
 
-import  addElementLowList from './lowPriorityAdd/lowPrior.js';
+document.querySelector('.low_list').addEventListener('click', addLowPriorElement);
 
-document.querySelector('.low_list').addEventListener('click', addElementLowList);
 
-import click from './remove/remove.js';
+let low_list_array =[];
 
-click();
+let  high_list_array = [];
+
+
+
+function addLowPriorElement() {
+
+
+
+    let div = document.createElement('div');
+    div.classList.add('field');
+
+    let inp = document.createElement('input');
+    inp.classList.add('radioButton');
+    inp.type = 'checkbox';
+
+    let pp = document.createElement('p');
+    pp.classList.add('txt');
+
+    pp.textContent = document.getElementById('lowInpId').value;
+    
+
+    let divClose = document.createElement('div');
+    divClose.classList.add('close');
+
+
+    let span1 = document.createElement('span');
+    span1.classList.add('line_rotate45');
+    let span2 = document.createElement('span');
+    span2.classList.add('line_rotate45');
+
+
+    let btn_close = document.createElement('input');
+    btn_close.classList.add('btn_close');
+    btn_close.type = 'button';
+
+
+    divClose.append(span1);
+    divClose.append(span2);
+
+
+    div.append(inp);
+    div.append(pp);
+    div.append(divClose);
+    div.append(btn_close);
+    
+  
+    let lowPriorDiv = document.querySelector(".lowPrior");
+
+    lowPriorDiv.append(div);
+
+
+    let inpContent = document.getElementById('lowInpId').value;
+
+    
+    let i = low_list_array.length;
+
+     low_list_array[i] = inpContent;
+    
+     addDeleteEvent();
+ 
+}
+
+
+
+
+
+
+
+ function addElementHighList() {
+
+    let div = document.createElement('div');
+    div.classList.add('field');
+
+    let inp = document.createElement('input');
+    inp.classList.add('radioButton');
+    inp.type = 'checkbox';
+
+    let pp = document.createElement('p');
+    pp.classList.add('txt');
+
+    pp.textContent = document.getElementById('highInpId').value;
+    
+
+    let divClose = document.createElement('div');
+    divClose.classList.add('close');
+
+
+    let span1 = document.createElement('span');
+    span1.classList.add('line_rotate45');
+    let span2 = document.createElement('span');
+    span2.classList.add('line_rotate45');
+
+
+    let btn_close = document.createElement('input');
+    btn_close.classList.add('btn_close');
+    btn_close.type = 'button';
+
+
+    divClose.append(span1);
+    divClose.append(span2);
+
+
+    div.append(inp);
+    div.append(pp);
+    div.append(divClose);
+    div.append(btn_close);
+    
+  
+
+    let seniorDiv = document.querySelector('.highPrior');
+
+    seniorDiv.append(div);
+
+
+    let inpContent = document.getElementById('highInpId').value;
+
+    
+    let i = high_list_array.length;
+
+   high_list_array[i] = inpContent;
+
+   addDeleteEvent();
+}
+
+
 
 
 
