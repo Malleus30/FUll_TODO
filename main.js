@@ -1,6 +1,7 @@
 
 
 
+
 import addDeleteEvent from './remove/remove.js';
 
 
@@ -12,9 +13,9 @@ document.querySelector('.high_list').addEventListener('click', addElementHighLis
 document.querySelector('.low_list').addEventListener('click', addLowPriorElement);
 
 
-let low_list_array =[];
+const low_list_array =[];
 
-let  high_list_array = [];
+const  high_list_array = [];
 
 
 
@@ -22,30 +23,49 @@ function addLowPriorElement() {
 
 
 
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.classList.add('field');
 
-    let inp = document.createElement('input');
+    const inp = document.createElement('input');
     inp.classList.add('radioButton');
     inp.type = 'checkbox';
 
-    let pp = document.createElement('p');
-    pp.classList.add('txt');
+    const taskParagrath = document.createElement('p');
+    taskParagrath.classList.add('txt');
 
-    pp.textContent = document.getElementById('lowInpId').value;
+    const check = document.getElementById('lowInpId').value;
+
+
+   
+    try{
+   
+   if(!check){
+      throw new SyntaxError("You canot add  an empty task") ; 
+   }
+
+   taskParagrath.textContent = check;
+
+    }catch(e){
+      if(e.name === 'SyntaxError'){
+         alert('Empty sring error:' + e.message);
+         return;
+      }
+    }
     
+    
+ 
 
-    let divClose = document.createElement('div');
+    const divClose = document.createElement('div');
     divClose.classList.add('close');
 
 
-    let span1 = document.createElement('span');
+    const span1 = document.createElement('span');
     span1.classList.add('line_rotate45');
-    let span2 = document.createElement('span');
+    const span2 = document.createElement('span');
     span2.classList.add('line_rotate45');
 
 
-    let btn_close = document.createElement('input');
+    const btn_close = document.createElement('input');
     btn_close.classList.add('btn_close');
     btn_close.type = 'button';
 
@@ -55,17 +75,17 @@ function addLowPriorElement() {
 
 
     div.append(inp);
-    div.append(pp);
+    div.append(taskParagrath);
     div.append(divClose);
     div.append(btn_close);
     
   
-    let lowPriorDiv = document.querySelector(".lowPrior");
+    const lowPriorDiv = document.querySelector(".lowPrior");
 
     lowPriorDiv.append(div);
 
 
-    let inpContent = document.getElementById('lowInpId').value;
+    const inpContent = document.getElementById('lowInpId').value;
 
     
     let i = low_list_array.length;
@@ -73,6 +93,8 @@ function addLowPriorElement() {
      low_list_array[i] = inpContent;
     
      addDeleteEvent();
+
+     document.getElementById('lowInpId').form.reset();
  
 }
 
@@ -84,30 +106,48 @@ function addLowPriorElement() {
 
  function addElementHighList() {
 
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.classList.add('field');
 
-    let inp = document.createElement('input');
+    const inp = document.createElement('input');
     inp.classList.add('radioButton');
     inp.type = 'checkbox';
 
-    let pp = document.createElement('p');
-    pp.classList.add('txt');
+    const taskParagrath = document.createElement('p');
+    taskParagrath.classList.add('txt');
 
-    pp.textContent = document.getElementById('highInpId').value;
+    const check = document.getElementById('highInpId').value;
+
+
+    try{
+   
+      if(!check){
+         throw new SyntaxError("You canot add  an empty task") ; 
+      }
+   
+      taskParagrath.textContent = check;
+   
+       }catch(e){
+         if(e.name === 'SyntaxError'){
+            alert('Empty sring error:' + e.message);
+            return;
+         }
+       }
+
+
     
 
-    let divClose = document.createElement('div');
+    const divClose = document.createElement('div');
     divClose.classList.add('close');
 
 
-    let span1 = document.createElement('span');
+    const span1 = document.createElement('span');
     span1.classList.add('line_rotate45');
-    let span2 = document.createElement('span');
+    const span2 = document.createElement('span');
     span2.classList.add('line_rotate45');
 
 
-    let btn_close = document.createElement('input');
+    const btn_close = document.createElement('input');
     btn_close.classList.add('btn_close');
     btn_close.type = 'button';
 
@@ -117,21 +157,21 @@ function addLowPriorElement() {
 
 
     div.append(inp);
-    div.append(pp);
+    div.append(taskParagrath);
     div.append(divClose);
     div.append(btn_close);
     
   
 
-    let seniorDiv = document.querySelector('.highPrior');
+    const seniorDiv = document.querySelector('.highPrior');
 
     seniorDiv.append(div);
 
 
-    let inpContent = document.getElementById('highInpId').value;
+    const inpContent = document.getElementById('highInpId').value;
 
     
-    let i = high_list_array.length;
+    const i = high_list_array.length;
 
    high_list_array[i] = inpContent;
 

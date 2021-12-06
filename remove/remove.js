@@ -1,6 +1,6 @@
 export default function addDeleteEvent(){
     
-    let btns = document.querySelectorAll('.btn_close');
+    const btns = document.querySelectorAll('.btn_close');
     
     btns.forEach(function(btn){
         btn.addEventListener('click',del);
